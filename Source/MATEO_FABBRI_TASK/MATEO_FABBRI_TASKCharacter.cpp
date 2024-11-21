@@ -71,7 +71,7 @@ void AMATEO_FABBRI_TASKCharacter::Tick(const float DeltaTime)
 	if (bOnAir && !GetCharacterMovement()->IsFalling())
 		OnLand();
 
-	if (GetCharacterMovement()->GetCurrentAcceleration().Size() <= 0.f)
+	if (GetCharacterMovement()->GetCurrentAcceleration().Size2D() <= 0.f)
 		bShouldKick = false;
 }
 
