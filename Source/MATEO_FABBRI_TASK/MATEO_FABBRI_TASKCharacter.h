@@ -48,9 +48,18 @@ class AMATEO_FABBRI_TASKCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Mesh, meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* SkateStaticMesh;
 
-	bool bOnAir;
-	float AirRotationSpeed;
+	bool bOnAir = false;
 
+protected:
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Movement)
+	float MinForwardVelocity = 100.f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Movement)
+	float RotationSpeed = .5f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Movement)
+	float AirRotationSpeed = 5.f;
+	
 public:
 	AMATEO_FABBRI_TASKCharacter();
 
@@ -74,6 +83,7 @@ protected:
 	virtual void Tick(float DeltaTime) override;
 	
 	void CalculateForwardVelocity() const;
+	void SetMinimumVelocity() const;
 
 public:
 	/** Returns CameraBoom subobject **/

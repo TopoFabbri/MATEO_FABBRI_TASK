@@ -14,7 +14,6 @@
     <list default="true" id="fb9efdb6-95af-4e8d-9256-646757bf9b8c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MATEO_FABBRI_TASK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MATEO_FABBRI_TASK/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Input/IMC_Default.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Input/IMC_Default.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/MATEO_FABBRI_TASKCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/MATEO_FABBRI_TASKCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/MATEO_FABBRI_TASKCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/MATEO_FABBRI_TASKCharacter.h" afterDir="false" />
     </list>
@@ -159,7 +158,7 @@
       <workItem from="1732149953780" duration="25000" />
       <workItem from="1732150123525" duration="791000" />
       <workItem from="1732156149926" duration="2136000" />
-      <workItem from="1732192514560" duration="10021000" />
+      <workItem from="1732192514560" duration="11487000" />
     </task>
     <servers />
   </component>

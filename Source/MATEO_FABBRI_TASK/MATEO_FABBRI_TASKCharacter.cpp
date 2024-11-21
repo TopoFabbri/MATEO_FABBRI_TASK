@@ -53,9 +53,6 @@ AMATEO_FABBRI_TASKCharacter::AMATEO_FABBRI_TASKCharacter()
 
 	SkateStaticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SkateStaticMesh"));
 	SkateStaticMesh->SetupAttachment(GetMesh(), "Skate");
-
-	bOnAir = false;
-	AirRotationSpeed = 10.f;
 	
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
@@ -65,6 +62,17 @@ void AMATEO_FABBRI_TASKCharacter::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
+}
+
+void AMATEO_FABBRI_TASKCharacter::Tick(const float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	SetMinimumVelocity();
+	CalculateForwardVelocity();
+
+	if (bOnAir && !GetCharacterMovement()->IsFalling())
+		OnLand();
 }
 
 void AMATEO_FABBRI_TASKCharacter::CalculateForwardVelocity() const
@@ -82,14 +90,13 @@ void AMATEO_FABBRI_TASKCharacter::CalculateForwardVelocity() const
 	GetCharacterMovement()->Velocity = updatedVelocity;
 }
 
-void AMATEO_FABBRI_TASKCharacter::Tick(const float DeltaTime)
+void AMATEO_FABBRI_TASKCharacter::SetMinimumVelocity() const
 {
-	Super::Tick(DeltaTime);
-
-	CalculateForwardVelocity();
-
-	if (bOnAir && !GetCharacterMovement()->IsFalling())
-		OnLand();
+	if (GetCharacterMovement()->IsFalling())
+		return;
+	
+	if (GetCharacterMovement()->Velocity.Size() < MinForwardVelocity)
+		GetCharacterMovement()->Velocity = SkateStaticMesh->GetForwardVector() * MinForwardVelocity;
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -164,7 +171,7 @@ void AMATEO_FABBRI_TASKCharacter::Look(const FInputActionValue& Value)
 		if (GetCharacterMovement()->IsFalling())
 			RootComponent->AddWorldRotation(FRotator(0, LookAxisVector.X * AirRotationSpeed, 0));
 		else
-			AddControllerYawInput(LookAxisVector.X);
+			AddControllerYawInput(LookAxisVector.X * RotationSpeed);
 
 		AddControllerPitchInput(LookAxisVector.Y);
 	}
