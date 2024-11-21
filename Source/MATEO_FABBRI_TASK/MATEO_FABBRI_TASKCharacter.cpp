@@ -13,9 +13,6 @@
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
-//////////////////////////////////////////////////////////////////////////
-// AMATEO_FABBRI_TASKCharacter
-
 AMATEO_FABBRI_TASKCharacter::AMATEO_FABBRI_TASKCharacter()
 {
 	// Set size for collision capsule
@@ -52,7 +49,7 @@ AMATEO_FABBRI_TASKCharacter::AMATEO_FABBRI_TASKCharacter()
 	FollowCamera->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
 
 	SkateStaticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SkateStaticMesh"));
-	SkateStaticMesh->SetupAttachment(GetMesh(), "Skate");
+	SkateStaticMesh->SetupAttachment(GetMesh());
 	
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
@@ -73,6 +70,9 @@ void AMATEO_FABBRI_TASKCharacter::Tick(const float DeltaTime)
 
 	if (bOnAir && !GetCharacterMovement()->IsFalling())
 		OnLand();
+
+	if (GetCharacterMovement()->GetCurrentAcceleration().Size() <= 0.f)
+		bShouldKick = false;
 }
 
 void AMATEO_FABBRI_TASKCharacter::CalculateForwardVelocity() const
@@ -90,17 +90,17 @@ void AMATEO_FABBRI_TASKCharacter::CalculateForwardVelocity() const
 	GetCharacterMovement()->Velocity = updatedVelocity;
 }
 
-void AMATEO_FABBRI_TASKCharacter::SetMinimumVelocity() const
+void AMATEO_FABBRI_TASKCharacter::SetMinimumVelocity()
 {
 	if (GetCharacterMovement()->IsFalling())
 		return;
 	
 	if (GetCharacterMovement()->Velocity.Size() < MinForwardVelocity)
+	{
 		GetCharacterMovement()->Velocity = SkateStaticMesh->GetForwardVector() * MinForwardVelocity;
+		bShouldKick = false;
+	}
 }
-
-//////////////////////////////////////////////////////////////////////////
-// Input
 
 void AMATEO_FABBRI_TASKCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -142,19 +142,25 @@ void AMATEO_FABBRI_TASKCharacter::Move(const FInputActionValue& Value)
 {
 	// input is a Vector2D
 	FVector2D MovementVector = Value.Get<FVector2D>();
-
+	
 	if (Controller != nullptr)
-	{
+	{		
 		// find out which way is forward
 		const FRotator Rotation = Controller->GetControlRotation();
 		const FRotator YawRotation(0, Rotation.Yaw, 0);
 
+		if (MovementVector.Y <= 0.f)
+			bShouldKick = false;
+		
 		// get forward vector
 		const FVector ForwardDirection = SkateStaticMesh->GetForwardVector();
 
 		// get right vector 
 		const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
 
+		if (MovementVector.Y > 0.f)
+			bShouldKick = true;
+		
 		// add movement 
 		AddMovementInput(ForwardDirection, MovementVector.Y);
 		AddMovementInput(RightDirection, MovementVector.X);

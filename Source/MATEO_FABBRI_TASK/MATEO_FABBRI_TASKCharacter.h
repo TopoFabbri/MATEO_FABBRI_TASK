@@ -49,6 +49,7 @@ class AMATEO_FABBRI_TASKCharacter : public ACharacter
 	UStaticMeshComponent* SkateStaticMesh;
 
 	bool bOnAir = false;
+	bool bShouldKick = false;
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Movement)
@@ -83,11 +84,14 @@ protected:
 	virtual void Tick(float DeltaTime) override;
 	
 	void CalculateForwardVelocity() const;
-	void SetMinimumVelocity() const;
+	void SetMinimumVelocity();
 
 public:
 	/** Returns CameraBoom subobject **/
 	FORCEINLINE class USpringArmComponent* GetCameraBoom() const { return CameraBoom; }
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
+
+	UFUNCTION(BlueprintCallable)
+	FORCEINLINE bool GetShouldKick() const { return bShouldKick; }
 };

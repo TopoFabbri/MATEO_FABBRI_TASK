@@ -13,6 +13,10 @@
   <component name="ChangeListManager">
     <list default="true" id="fb9efdb6-95af-4e8d-9256-646757bf9b8c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MATEO_FABBRI_TASK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MATEO_FABBRI_TASK/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Character/Anim/Skateboarding.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Character/Anim/Skateboarding.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Character/Skateboarding.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Character/Skateboarding.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Character/Skateboarding_Skeleton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Character/Skateboarding_Skeleton.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Mannequins/Animations/ABP_Skateboarder.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Mannequins/Animations/ABP_Skateboarder.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/MATEO_FABBRI_TASKCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/MATEO_FABBRI_TASKCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/MATEO_FABBRI_TASKCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/MATEO_FABBRI_TASKCharacter.h" afterDir="false" />
@@ -47,16 +51,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;C/C++ Project.MATEO_FABBRI_TASK.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "C/C++ Project.MATEO_FABBRI_TASK.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "main",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="C/C++ Project.MATEO_FABBRI_TASK">
     <configuration name="MATEO_FABBRI_TASK" type="CppProject" factoryName="C++ Project">
       <configuration_1 setup="1">
@@ -158,7 +162,7 @@
       <workItem from="1732149953780" duration="25000" />
       <workItem from="1732150123525" duration="791000" />
       <workItem from="1732156149926" duration="2136000" />
-      <workItem from="1732192514560" duration="11487000" />
+      <workItem from="1732192514560" duration="16299000" />
     </task>
     <servers />
   </component>
