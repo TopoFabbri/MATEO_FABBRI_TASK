@@ -56,11 +56,14 @@ protected:
 	float MinForwardVelocity = 100.f;
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Movement)
-	float RotationSpeed = .5f;
+	float MinRotationSpeed = .5f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Movement)
+	float MaxRotationSpeed = 1.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Movement)
 	float AirRotationSpeed = 5.f;
-	
+
 public:
 	AMATEO_FABBRI_TASKCharacter();
 

@@ -177,7 +177,15 @@ void AMATEO_FABBRI_TASKCharacter::Look(const FInputActionValue& Value)
 		if (GetCharacterMovement()->IsFalling())
 			RootComponent->AddWorldRotation(FRotator(0, LookAxisVector.X * AirRotationSpeed, 0));
 		else
-			AddControllerYawInput(LookAxisVector.X * RotationSpeed);
+		{
+			float AlphaVelocity = GetCharacterMovement()->Velocity.Size2D();
+			AlphaVelocity = (AlphaVelocity - MinForwardVelocity) / (GetCharacterMovement()->MaxWalkSpeed - MinForwardVelocity);
+
+			
+			const float RotationSpeedAlpha = FMath::Lerp(MaxRotationSpeed, MinRotationSpeed, AlphaVelocity);
+			
+			AddControllerYawInput(LookAxisVector.X * RotationSpeedAlpha);
+		}
 
 		AddControllerPitchInput(LookAxisVector.Y);
 	}
