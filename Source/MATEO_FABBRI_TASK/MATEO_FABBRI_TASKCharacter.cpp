@@ -10,6 +10,7 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "InputActionValue.h"
+#include "Kismet/GameplayStatics.h"
 
 DEFINE_LOG_CATEGORY(LogTemplateCharacter);
 
@@ -59,6 +60,8 @@ void AMATEO_FABBRI_TASKCharacter::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
+	
+	SkaterHUD = Cast<ASkaterHUD>(UGameplayStatics::GetPlayerController(this, 0)->GetHUD());
 }
 
 void AMATEO_FABBRI_TASKCharacter::Tick(const float DeltaTime)
@@ -105,6 +108,8 @@ void AMATEO_FABBRI_TASKCharacter::SetMinimumVelocity()
 void AMATEO_FABBRI_TASKCharacter::AddScore(int Score)
 {
 	ScoreCount += Score;
+
+	SkaterHUD->UpdateScore(ScoreCount);
 }
 
 void AMATEO_FABBRI_TASKCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)

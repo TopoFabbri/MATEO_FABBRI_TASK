@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "SkaterHUD.h"
 #include "GameFramework/Character.h"
 #include "Logging/LogMacros.h"
 #include "MATEO_FABBRI_TASKCharacter.generated.h"
@@ -65,6 +66,9 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Movement)
 	float AirRotationSpeed = 5.f;
 
+	UPROPERTY()
+	ASkaterHUD* SkaterHUD;
+	
 public:
 	AMATEO_FABBRI_TASKCharacter();
 

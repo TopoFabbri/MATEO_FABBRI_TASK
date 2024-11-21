@@ -17,3 +17,9 @@ void ASkaterHUD::BeginPlay()
 	if (HudWidget)
 		HudWidget->AddToViewport();
 }
+
+void ASkaterHUD::UpdateScore(const int Score) const
+{
+	if (HudWidget)
+		HudWidget->SetScore(Score);
+}

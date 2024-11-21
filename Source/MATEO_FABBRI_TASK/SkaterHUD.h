@@ -22,4 +22,7 @@ protected:
 	class UHUDWidget* HudWidget;
 
 	virtual void BeginPlay() override;
+
+public:
+	void UpdateScore(int Score) const;
 };
