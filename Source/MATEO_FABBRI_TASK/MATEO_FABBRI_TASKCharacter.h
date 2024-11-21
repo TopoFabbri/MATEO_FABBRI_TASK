@@ -50,6 +50,7 @@ class AMATEO_FABBRI_TASKCharacter : public ACharacter
 
 	bool bOnAir = false;
 	bool bShouldKick = false;
+	int ScoreCount = 0;
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Movement)
@@ -97,4 +98,7 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	FORCEINLINE bool GetShouldKick() const { return bShouldKick; }
+	FORCEINLINE int GetScoreCount() const { return ScoreCount; }
+
+	void AddScore(int Score);
 };

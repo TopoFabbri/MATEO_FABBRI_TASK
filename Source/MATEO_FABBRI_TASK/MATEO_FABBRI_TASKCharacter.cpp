@@ -102,6 +102,11 @@ void AMATEO_FABBRI_TASKCharacter::SetMinimumVelocity()
 	}
 }
 
+void AMATEO_FABBRI_TASKCharacter::AddScore(int Score)
+{
+	ScoreCount += Score;
+}
+
 void AMATEO_FABBRI_TASKCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	// Add Input Mapping Context
