@@ -105,6 +105,11 @@ void AMATEO_FABBRI_TASKCharacter::SetMinimumVelocity()
 	}
 }
 
+void AMATEO_FABBRI_TASKCharacter::ResetSpin()
+{
+	Spin = 0.f;
+}
+
 void AMATEO_FABBRI_TASKCharacter::AddScore(int Score)
 {
 	ScoreCount += Score;
@@ -189,6 +194,7 @@ void AMATEO_FABBRI_TASKCharacter::Look(const FInputActionValue& Value)
 			const float DT = GetWorld()->GetDeltaSeconds();
 			
 			RootComponent->AddWorldRotation(FRotator(0, LookAxisVector.X * AirRotationSpeed * DT, 0));
+			Spin += LookAxisVector.X * AirRotationSpeed * DT;
 		}
 		else
 		{
@@ -219,4 +225,9 @@ void AMATEO_FABBRI_TASKCharacter::OnLand()
 {
 	bOnAir = false;
 	bUseControllerRotationYaw = true;
+
+	if (Spin > MinToScoreSpin)
+		AddScore(SpinScore);
+	
+	ResetSpin();
 }

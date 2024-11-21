@@ -52,6 +52,7 @@ class AMATEO_FABBRI_TASKCharacter : public ACharacter
 	bool bOnAir = false;
 	bool bShouldKick = false;
 	int ScoreCount = 0;
+	float Spin = 0.f;
 
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Movement)
@@ -66,6 +67,12 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Movement)
 	float AirRotationSpeed = 5.f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Score")
+	float SpinScore = 50.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Score")
+	float MinToScoreSpin = 360.f;
+	
 	UPROPERTY()
 	ASkaterHUD* SkaterHUD;
 	
@@ -93,6 +100,7 @@ protected:
 	
 	void CalculateForwardVelocity() const;
 	void SetMinimumVelocity();
+	void ResetSpin();
 
 public:
 	/** Returns CameraBoom subobject **/
