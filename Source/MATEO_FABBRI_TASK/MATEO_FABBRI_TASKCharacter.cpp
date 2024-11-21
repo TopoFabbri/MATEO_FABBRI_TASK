@@ -22,9 +22,9 @@ AMATEO_FABBRI_TASKCharacter::AMATEO_FABBRI_TASKCharacter()
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
 
 	// Don't rotate when the controller rotates. Let that just affect the camera.
-	bUseControllerRotationPitch = false;
-	bUseControllerRotationYaw = false;
-	bUseControllerRotationRoll = false;
+	bUseControllerRotationPitch = true;
+	bUseControllerRotationYaw = true;
+	bUseControllerRotationRoll = true;
 
 	// Configure character movement
 	GetCharacterMovement()->bOrientRotationToMovement = true; // Character moves in the direction of input...	
@@ -54,6 +54,9 @@ AMATEO_FABBRI_TASKCharacter::AMATEO_FABBRI_TASKCharacter()
 	SkateStaticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SkateStaticMesh"));
 	SkateStaticMesh->SetupAttachment(GetMesh(), "Skate");
 
+	bOnAir = false;
+	AirRotationSpeed = 10.f;
+	
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
 }
@@ -64,12 +67,29 @@ void AMATEO_FABBRI_TASKCharacter::BeginPlay()
 	Super::BeginPlay();
 }
 
+void AMATEO_FABBRI_TASKCharacter::CalculateForwardVelocity() const
+{
+	if (GetCharacterMovement()->IsFalling())
+		return;
+
+	FVector SkateForward = SkateStaticMesh->GetForwardVector();
+
+	FVector updatedVelocity = GetCharacterMovement()->Velocity;
+	updatedVelocity.Z = 0;
+	updatedVelocity = SkateForward * updatedVelocity.Size();
+
+	updatedVelocity.Z = GetCharacterMovement()->Velocity.Z;
+	GetCharacterMovement()->Velocity = updatedVelocity;
+}
+
 void AMATEO_FABBRI_TASKCharacter::Tick(const float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
-	FVector SkateForward = SkateStaticMesh->GetForwardVector();
-	GetCharacterMovement()->Velocity = SkateForward * GetCharacterMovement()->Velocity.Size();
+	CalculateForwardVelocity();
+
+	if (bOnAir && !GetCharacterMovement()->IsFalling())
+		OnLand();
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -124,10 +144,10 @@ void AMATEO_FABBRI_TASKCharacter::Move(const FInputActionValue& Value)
 
 		// get forward vector
 		const FVector ForwardDirection = SkateStaticMesh->GetForwardVector();
-		
+
 		// get right vector 
 		const FVector RightDirection = FRotationMatrix(YawRotation).GetUnitAxis(EAxis::Y);
-		
+
 		// add movement 
 		AddMovementInput(ForwardDirection, MovementVector.Y);
 		AddMovementInput(RightDirection, MovementVector.X);
@@ -141,8 +161,26 @@ void AMATEO_FABBRI_TASKCharacter::Look(const FInputActionValue& Value)
 
 	if (Controller != nullptr)
 	{
-		// add yaw and pitch input to controller
-		AddControllerYawInput(LookAxisVector.X);
+		if (GetCharacterMovement()->IsFalling())
+			RootComponent->AddWorldRotation(FRotator(0, LookAxisVector.X * AirRotationSpeed, 0));
+		else
+			AddControllerYawInput(LookAxisVector.X);
+
 		AddControllerPitchInput(LookAxisVector.Y);
 	}
+}
+
+void AMATEO_FABBRI_TASKCharacter::Jump()
+{
+	Super::Jump();
+
+	bOnAir = true;
+	
+	bUseControllerRotationYaw = false;
+}
+
+void AMATEO_FABBRI_TASKCharacter::OnLand()
+{
+	bOnAir = false;
+	bUseControllerRotationYaw = true;
 }

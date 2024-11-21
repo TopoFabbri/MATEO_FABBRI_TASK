@@ -48,6 +48,9 @@ class AMATEO_FABBRI_TASKCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Mesh, meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* SkateStaticMesh;
 
+	bool bOnAir;
+	float AirRotationSpeed;
+
 public:
 	AMATEO_FABBRI_TASKCharacter();
 
@@ -58,6 +61,10 @@ protected:
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
 
+	virtual void Jump() override;
+
+	void OnLand();
+
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
@@ -65,6 +72,8 @@ protected:
 	// To add mapping context
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
+	
+	void CalculateForwardVelocity() const;
 
 public:
 	/** Returns CameraBoom subobject **/
