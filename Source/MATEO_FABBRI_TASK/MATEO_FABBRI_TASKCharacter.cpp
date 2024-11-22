@@ -150,7 +150,7 @@ void AMATEO_FABBRI_TASKCharacter::Fall()
 {
 	PreviousLocation = GetMesh()->GetRelativeLocation();
 	PreviousRotation = GetMesh()->GetRelativeRotation();
-	
+
 	GetMesh()->SetCollisionProfileName(TEXT("Ragdoll"));
 	GetMesh()->SetSimulatePhysics(true);
 
@@ -193,8 +193,8 @@ bool AMATEO_FABBRI_TASKCharacter::MidLand(float Rotation) const
 
 	while (Rotation < 0.f)
 		Rotation += 360.f;
-	
-	return  Rotation < MidLandRange / 2.f || Rotation > 360.f - MidLandRange / 2.f;
+
+	return Rotation < MidLandRange / 2.f || Rotation > 360.f - MidLandRange / 2.f;
 }
 
 float AMATEO_FABBRI_TASKCharacter::GetNormalizedSpeed() const
@@ -241,6 +241,10 @@ void AMATEO_FABBRI_TASKCharacter::SetupPlayerInputComponent(UInputComponent* Pla
 		// Looking
 		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this,
 		                                   &AMATEO_FABBRI_TASKCharacter::Look);
+
+		// Pause
+		EnhancedInputComponent->BindAction(PauseAction, ETriggerEvent::Triggered, this,
+		                                   &AMATEO_FABBRI_TASKCharacter::Pause);
 	}
 	else
 	{
@@ -305,6 +309,24 @@ void AMATEO_FABBRI_TASKCharacter::Look(const FInputActionValue& Value)
 	}
 }
 
+void AMATEO_FABBRI_TASKCharacter::Pause()
+{
+	SetPause(true);
+}
+
+void AMATEO_FABBRI_TASKCharacter::SetPause(const bool bPause) const
+{
+	APlayerController* PlayerController = Cast<APlayerController>(GetController());
+
+	if (!PlayerController)
+		return;
+	
+	PlayerController->SetPause(bPause);
+	SkaterHUD->SetPause(bPause);
+
+	PlayerController->SetShowMouseCursor(bPause);
+}
+
 void AMATEO_FABBRI_TASKCharacter::Jump()
 {
 	Super::Jump();
@@ -320,7 +342,7 @@ void AMATEO_FABBRI_TASKCharacter::OnLand()
 	bUseControllerRotationYaw = true;
 
 	const int SpinCount = FMath::Abs(Spin / 360.f);
-	
+
 	if (GoodLand(Spin))
 		AddScore(SpinScore * SpinCount);
 	else if (MidLand(Spin))

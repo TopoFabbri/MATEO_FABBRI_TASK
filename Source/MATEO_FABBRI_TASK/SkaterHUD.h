@@ -21,8 +21,15 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
 	class UHUDWidget* HudWidget;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
+	TSubclassOf<UUserWidget> PauseWidgetClass;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Widgets")
+	class UPauseWidget* PauseWidget;
+	
 	virtual void BeginPlay() override;
 
 public:
 	void UpdateScore(int Score) const;
+	void SetPause(bool bPause) const;
 };

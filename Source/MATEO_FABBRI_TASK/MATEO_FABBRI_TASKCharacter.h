@@ -45,6 +45,10 @@ class AMATEO_FABBRI_TASKCharacter : public ACharacter
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	UInputAction* LookAction;
 
+	/** Pause Input Action */
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	UInputAction* PauseAction;
+	
 	/** Skate Static Mesh Component */
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Mesh, meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* SkateStaticMesh;
@@ -103,7 +107,7 @@ protected:
 
 	/** Called for looking input */
 	void Look(const FInputActionValue& Value);
-
+	
 	virtual void Jump() override;
 
 	void OnLand();
@@ -144,4 +148,6 @@ public:
 	FORCEINLINE int GetScoreCount() const { return ScoreCount; }
 
 	void AddScore(int Score);
+	void Pause();
+	void SetPause(bool bPause) const;
 };
