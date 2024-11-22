@@ -72,6 +72,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Score")
 	float MinToScoreSpin = 360.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Skate")
+	float SkatePosOffset = 1.f;
 	
 	UPROPERTY()
 	ASkaterHUD* SkaterHUD;
@@ -100,7 +103,7 @@ protected:
 	
 	void CalculateForwardVelocity() const;
 	void SetMinimumVelocity();
-	void PositionSkateMesh();
+	void PositionSkateMesh() const;
 	void ResetSpin();
 
 public:

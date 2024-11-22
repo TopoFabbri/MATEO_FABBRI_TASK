@@ -70,6 +70,7 @@ void AMATEO_FABBRI_TASKCharacter::Tick(const float DeltaTime)
 
 	SetMinimumVelocity();
 	CalculateForwardVelocity();
+	PositionSkateMesh();
 
 	if (bOnAir && !GetCharacterMovement()->IsFalling())
 		OnLand();
@@ -105,9 +106,35 @@ void AMATEO_FABBRI_TASKCharacter::SetMinimumVelocity()
 	}
 }
 
-void AMATEO_FABBRI_TASKCharacter::PositionSkateMesh()
+void AMATEO_FABBRI_TASKCharacter::PositionSkateMesh() const
 {
+	FVector FW = SkateStaticMesh->GetSocketLocation("FW");
+	FVector BW = SkateStaticMesh->GetSocketLocation("BW");
 	
+	FHitResult HitResult;
+	FVector StartLocation = FW + FVector(0, 0, 30.f);
+	FVector EndLocation = FW + FVector(0, 0, -30.f);
+	FCollisionQueryParams TraceParams(FName(TEXT("")), false, SkateStaticMesh->GetOwner());
+	TraceParams.bReturnPhysicalMaterial = false;
+	TraceParams.bDebugQuery = true;
+
+	FVector FWHitLocation;
+	FVector BWHitLocation;
+	
+	if (GetWorld()->LineTraceSingleByChannel(HitResult, StartLocation, EndLocation, ECC_Visibility, TraceParams))
+		FWHitLocation = HitResult.Location;
+	else
+		return;
+
+	StartLocation = BW + FVector(0, 0, 30.f);
+	EndLocation = BW + FVector(0, 0, -30.f);
+
+	if (GetWorld()->LineTraceSingleByChannel(HitResult, StartLocation, EndLocation, ECC_Visibility, TraceParams))
+		BWHitLocation = HitResult.Location;
+	else
+		return;
+	
+	SkateStaticMesh->SetWorldRotation((FWHitLocation - BWHitLocation).Rotation());
 }
 
 void AMATEO_FABBRI_TASKCharacter::ResetSpin()
