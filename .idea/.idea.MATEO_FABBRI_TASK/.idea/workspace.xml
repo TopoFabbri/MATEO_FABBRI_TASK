@@ -13,19 +13,20 @@
   <component name="ChangeListManager">
     <list default="true" id="fb9efdb6-95af-4e8d-9256-646757bf9b8c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MATEO_FABBRI_TASK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MATEO_FABBRI_TASK/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/IndustrialArea/Meshes/SM_Barrel.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/IndustrialArea/Meshes/SM_Cardboard_Box.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/IndustrialArea/Meshes/SM_Dumpster.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/IndustrialArea/Meshes/SM_Pallet_With_Boxes_1.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/IndustrialArea/Meshes/SM_Wooden_Box.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/IndustrialArea/Meshes/SM_Wooden_Box_2.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/IndustrialArea/Meshes/SM_Wooden_Box_2_Cup.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/IndustrialArea/Meshes/SM_Wooden_pallet.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/Obstacles/Obstacle.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/Obstacles/Obstacle.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/B/AV/REVLDA5OLGAKFN9D8UL5P8.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/B/AV/REVLDA5OLGAKFN9D8UL5P8.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/Obstacle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/Obstacle.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_Gamemode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_Gamemode.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Maps/IndustrialZone.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Maps/IndustrialZone.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/0/D8/XD782GB0ZNKLF8XK4CQ1QW.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/0/D8/XD782GB0ZNKLF8XK4CQ1QW.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/1/Z1/J3EB9SIC7G46NPNPMVVIX2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/1/Z1/J3EB9SIC7G46NPNPMVVIX2.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/5/YJ/JHLXRSGMFFSO1EFJDCZRHZ.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/5/YJ/JHLXRSGMFFSO1EFJDCZRHZ.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/6/4E/R1PI001JM0FY5U4XE4SEBN.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/6/4E/R1PI001JM0FY5U4XE4SEBN.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/7/ND/Z5ZQW0EN6ZZJ9OTS2U3CI7.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/7/ND/Z5ZQW0EN6ZZJ9OTS2U3CI7.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/9/5Y/046VPXLMR057ZTSUNZOF4P.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/9/5Y/046VPXLMR057ZTSUNZOF4P.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/9/6L/CCJMJ9KN5VTQXM39YC2QOE.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/9/6L/CCJMJ9KN5VTQXM39YC2QOE.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/9/8A/NW1KAQ32OWWPO7ZZHSW96A.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/9/8A/NW1KAQ32OWWPO7ZZHSW96A.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/9/RL/2MJ217O4RBUOXWN8QXNYVC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/9/RL/2MJ217O4RBUOXWN8QXNYVC.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/B/4R/JWY7DAD7RNVD9E7D365IZE.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/B/4R/JWY7DAD7RNVD9E7D365IZE.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/B/NB/BYEZOEB04AG0NHNFQCT8XX.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/B/NB/BYEZOEB04AG0NHNFQCT8XX.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/E/D7/AY9PW20PAYR948SPNDPJ5X.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/E/D7/AY9PW20PAYR948SPNDPJ5X.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +40,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -231,7 +234,7 @@
       <workItem from="1732288261530" duration="79000" />
       <workItem from="1732288449803" duration="614000" />
       <workItem from="1732289097985" duration="8066000" />
-      <workItem from="1732299723102" duration="5769000" />
+      <workItem from="1732299723102" duration="10574000" />
     </task>
     <servers />
   </component>
