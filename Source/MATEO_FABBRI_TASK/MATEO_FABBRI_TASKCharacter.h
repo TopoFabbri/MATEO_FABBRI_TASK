@@ -100,6 +100,7 @@ protected:
 	
 	void CalculateForwardVelocity() const;
 	void SetMinimumVelocity();
+	void PositionSkateMesh();
 	void ResetSpin();
 
 public:
@@ -108,6 +109,9 @@ public:
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
 
+	UFUNCTION(BlueprintCallable)
+	float GetNormalizedSpeed();
+	
 	UFUNCTION(BlueprintCallable)
 	FORCEINLINE bool GetShouldKick() const { return bShouldKick; }
 	FORCEINLINE int GetScoreCount() const { return ScoreCount; }

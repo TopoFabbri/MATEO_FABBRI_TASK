@@ -60,7 +60,7 @@ void AMATEO_FABBRI_TASKCharacter::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
-	
+
 	SkaterHUD = Cast<ASkaterHUD>(UGameplayStatics::GetPlayerController(this, 0)->GetHUD());
 }
 
@@ -105,9 +105,20 @@ void AMATEO_FABBRI_TASKCharacter::SetMinimumVelocity()
 	}
 }
 
+void AMATEO_FABBRI_TASKCharacter::PositionSkateMesh()
+{
+	
+}
+
 void AMATEO_FABBRI_TASKCharacter::ResetSpin()
 {
 	Spin = 0.f;
+}
+
+float AMATEO_FABBRI_TASKCharacter::GetNormalizedSpeed()
+{
+	return (GetCharacterMovement()->Velocity.Size2D() - MinForwardVelocity) / (GetCharacterMovement()->MaxWalkSpeed -
+		MinForwardVelocity);
 }
 
 void AMATEO_FABBRI_TASKCharacter::AddScore(int Score)
@@ -192,18 +203,13 @@ void AMATEO_FABBRI_TASKCharacter::Look(const FInputActionValue& Value)
 		if (GetCharacterMovement()->IsFalling())
 		{
 			const float DT = GetWorld()->GetDeltaSeconds();
-			
+
 			RootComponent->AddWorldRotation(FRotator(0, LookAxisVector.X * AirRotationSpeed * DT, 0));
 			Spin += LookAxisVector.X * AirRotationSpeed * DT;
 		}
 		else
 		{
-			float AlphaVelocity = GetCharacterMovement()->Velocity.Size2D();
-			AlphaVelocity = (AlphaVelocity - MinForwardVelocity) / (GetCharacterMovement()->MaxWalkSpeed -
-				MinForwardVelocity);
-
-
-			const float RotationSpeedAlpha = FMath::Lerp(MaxRotationSpeed, MinRotationSpeed, AlphaVelocity);
+			const float RotationSpeedAlpha = FMath::Lerp(MaxRotationSpeed, MinRotationSpeed, GetNormalizedSpeed());
 
 			AddControllerYawInput(LookAxisVector.X * RotationSpeedAlpha);
 		}
@@ -228,6 +234,6 @@ void AMATEO_FABBRI_TASKCharacter::OnLand()
 
 	if (Spin > MinToScoreSpin)
 		AddScore(SpinScore);
-	
+
 	ResetSpin();
 }
