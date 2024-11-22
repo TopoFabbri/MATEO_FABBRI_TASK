@@ -179,7 +179,10 @@ bool AMATEO_FABBRI_TASKCharacter::GoodLand(float Rotation) const
 {
 	while (Rotation > 360.f)
 		Rotation -= 360.f;
-	
+
+	while (Rotation < 0.f)
+		Rotation += 360.f;
+
 	return Rotation < GoodLandRange / 2.f || Rotation > 360.f - GoodLandRange / 2.f;
 }
 
@@ -187,8 +190,11 @@ bool AMATEO_FABBRI_TASKCharacter::MidLand(float Rotation) const
 {
 	while (Rotation > 360.f)
 		Rotation -= 360.f;
+
+	while (Rotation < 0.f)
+		Rotation += 360.f;
 	
-	return Rotation < MidLandRange / 2.f || Rotation > 360.f - MidLandRange / 2.f;
+	return  Rotation < MidLandRange / 2.f || Rotation > 360.f - MidLandRange / 2.f;
 }
 
 float AMATEO_FABBRI_TASKCharacter::GetNormalizedSpeed() const
@@ -313,10 +319,12 @@ void AMATEO_FABBRI_TASKCharacter::OnLand()
 	bOnAir = false;
 	bUseControllerRotationYaw = true;
 
+	const int SpinCount = FMath::Abs(Spin / 360.f);
+	
 	if (GoodLand(Spin))
-		AddScore(SpinScore);
+		AddScore(SpinScore * SpinCount);
 	else if (MidLand(Spin))
-		AddScore(SpinScore / 2);
+		AddScore(SpinScore / 2 * SpinCount);
 	else
 		Fall();
 
