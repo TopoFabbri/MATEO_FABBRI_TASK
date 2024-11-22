@@ -11,11 +11,13 @@ AObstacle::AObstacle()
 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
 
-	BoxCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxCollisionTrigger"));
-	SetRootComponent(BoxCollision);
-
 	MeshComponent = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MeshComponent"));
-	MeshComponent->SetupAttachment(BoxCollision);
+	SetRootComponent(MeshComponent);
+
+	BoxCollision = CreateDefaultSubobject<UBoxComponent>(TEXT("BoxCollisionTrigger"));
+	BoxCollision->SetupAttachment(MeshComponent);
+
+	BoxCollision->SetCollisionResponseToAllChannels(ECR_Overlap);
 }
 
 // Called when the game starts or when spawned

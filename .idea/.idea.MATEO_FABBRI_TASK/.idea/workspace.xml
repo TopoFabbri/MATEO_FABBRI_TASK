@@ -12,22 +12,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fb9efdb6-95af-4e8d-9256-646757bf9b8c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/UI/W_HUDWidget.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/UI/W_Pause.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Content/ThirdPerson/Input/Actions/IA_Pause.uasset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MATEO_FABBRI_TASK.sln.DotSettings.user" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/PauseWidget.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/PauseWidget.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MATEO_FABBRI_TASK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MATEO_FABBRI_TASK/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/IndustrialArea/Meshes/SM_Barrel.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/IndustrialArea/Meshes/SM_Cardboard_Box.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/IndustrialArea/Meshes/SM_Dumpster.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/IndustrialArea/Meshes/SM_Pallet_With_Boxes_1.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/IndustrialArea/Meshes/SM_Wooden_Box.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/IndustrialArea/Meshes/SM_Wooden_Box_2.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/IndustrialArea/Meshes/SM_Wooden_Box_2_Cup.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/IndustrialArea/Meshes/SM_Wooden_pallet.uasset" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/UI/BP_HUD.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/UI/BP_HUD.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/UI/BP_HUDWidget.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Input/IMC_Default.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Input/IMC_Default.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/MATEO_FABBRI_TASKCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/MATEO_FABBRI_TASKCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/MATEO_FABBRI_TASKCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/MATEO_FABBRI_TASKCharacter.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/SkaterHUD.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/SkaterHUD.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/SkaterHUD.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/SkaterHUD.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/Obstacles/Obstacle.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/Obstacles/Obstacle.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/B/AV/REVLDA5OLGAKFN9D8UL5P8.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/B/AV/REVLDA5OLGAKFN9D8UL5P8.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/Obstacle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/Obstacle.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +231,7 @@
       <workItem from="1732288261530" duration="79000" />
       <workItem from="1732288449803" duration="614000" />
       <workItem from="1732289097985" duration="8066000" />
-      <workItem from="1732299723102" duration="1931000" />
+      <workItem from="1732299723102" duration="5769000" />
     </task>
     <servers />
   </component>
