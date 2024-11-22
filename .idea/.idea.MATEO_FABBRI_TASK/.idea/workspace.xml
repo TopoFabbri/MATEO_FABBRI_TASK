@@ -13,7 +13,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fb9efdb6-95af-4e8d-9256-646757bf9b8c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MATEO_FABBRI_TASK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MATEO_FABBRI_TASK/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/MATEO_FABBRI_TASKCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/MATEO_FABBRI_TASKCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Input/IMC_Default.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Input/IMC_Default.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +81,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "C/C++ Project.MATEO_FABBRI_TASK.executor": "Debug",
+    "C/C++ Project.MATEO_FABBRI_TASK.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "com.codeium.enabled": "true",
@@ -194,7 +194,7 @@
       <workItem from="1732232460693" duration="49000" />
       <workItem from="1732232541388" duration="16000" />
       <workItem from="1732232686056" duration="17452000" />
-      <workItem from="1732268825034" duration="3147000" />
+      <workItem from="1732268825034" duration="4452000" />
     </task>
     <servers />
   </component>
