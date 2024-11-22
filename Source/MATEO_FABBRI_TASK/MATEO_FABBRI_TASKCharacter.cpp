@@ -152,6 +152,11 @@ float AMATEO_FABBRI_TASKCharacter::GetNormalizedSpeed()
 		MinForwardVelocity);
 }
 
+FVector AMATEO_FABBRI_TASKCharacter::GetFrontFootPosition() const
+{
+	return SkateStaticMesh->GetSocketLocation("FF");
+}
+
 void AMATEO_FABBRI_TASKCharacter::AddScore(int Score)
 {
 	ScoreCount += Score;

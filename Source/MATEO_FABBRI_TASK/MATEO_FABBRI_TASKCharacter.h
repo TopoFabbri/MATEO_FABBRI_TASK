@@ -114,6 +114,9 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	float GetNormalizedSpeed();
+
+	UFUNCTION(BlueprintCallable)
+	FVector GetFrontFootPosition() const;
 	
 	UFUNCTION(BlueprintCallable)
 	FORCEINLINE bool GetShouldKick() const { return bShouldKick; }
