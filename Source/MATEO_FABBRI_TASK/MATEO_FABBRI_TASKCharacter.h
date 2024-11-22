@@ -74,8 +74,8 @@ protected:
 	float MinToScoreSpin = 360.f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Skate")
-	float SkatePosOffset = 1.f;
-	
+	float SkateRotSpeed = 90.f;
+		
 	UPROPERTY()
 	ASkaterHUD* SkaterHUD;
 	

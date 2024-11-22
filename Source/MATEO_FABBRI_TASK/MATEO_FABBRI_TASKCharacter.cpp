@@ -110,7 +110,7 @@ void AMATEO_FABBRI_TASKCharacter::PositionSkateMesh() const
 {
 	FVector FW = SkateStaticMesh->GetSocketLocation("FW");
 	FVector BW = SkateStaticMesh->GetSocketLocation("BW");
-	
+
 	FHitResult HitResult;
 	FVector StartLocation = FW + FVector(0, 0, 30.f);
 	FVector EndLocation = FW + FVector(0, 0, -30.f);
@@ -120,7 +120,7 @@ void AMATEO_FABBRI_TASKCharacter::PositionSkateMesh() const
 
 	FVector FWHitLocation;
 	FVector BWHitLocation;
-	
+
 	if (GetWorld()->LineTraceSingleByChannel(HitResult, StartLocation, EndLocation, ECC_Visibility, TraceParams))
 		FWHitLocation = HitResult.Location;
 	else
@@ -133,8 +133,12 @@ void AMATEO_FABBRI_TASKCharacter::PositionSkateMesh() const
 		BWHitLocation = HitResult.Location;
 	else
 		return;
-	
-	SkateStaticMesh->SetWorldRotation((FWHitLocation - BWHitLocation).Rotation());
+
+	FRotator Rotation = SkateStaticMesh->GetComponentRotation();
+	Rotation = FMath::Lerp(Rotation, (FWHitLocation - BWHitLocation).Rotation(),
+	                       SkateRotSpeed * GetWorld()->GetDeltaSeconds());
+
+	SkateStaticMesh->SetWorldRotation(Rotation);
 }
 
 void AMATEO_FABBRI_TASKCharacter::ResetSpin()
