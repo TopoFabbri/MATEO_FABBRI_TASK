@@ -50,7 +50,7 @@ AMATEO_FABBRI_TASKCharacter::AMATEO_FABBRI_TASKCharacter()
 	FollowCamera->bUsePawnControlRotation = false; // Camera does not rotate relative to arm
 
 	SkateStaticMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("SkateStaticMesh"));
-	SkateStaticMesh->SetupAttachment(GetMesh());
+	SkateStaticMesh->SetupAttachment(RootComponent);
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named ThirdPersonCharacter (to avoid direct content references in C++)
@@ -146,7 +146,52 @@ void AMATEO_FABBRI_TASKCharacter::ResetSpin()
 	Spin = 0.f;
 }
 
-float AMATEO_FABBRI_TASKCharacter::GetNormalizedSpeed()
+void AMATEO_FABBRI_TASKCharacter::Fall()
+{
+	PreviousLocation = GetMesh()->GetRelativeLocation();
+	PreviousRotation = GetMesh()->GetRelativeRotation();
+	
+	GetMesh()->SetCollisionProfileName(TEXT("Ragdoll"));
+	GetMesh()->SetSimulatePhysics(true);
+
+	GetWorld()->GetTimerManager().SetTimer(TimerHandle, this, &AMATEO_FABBRI_TASKCharacter::GetUp, FallenTime, false);
+}
+
+void AMATEO_FABBRI_TASKCharacter::GetUp()
+{
+	GetMesh()->SetSimulatePhysics(false);
+	GetMesh()->SetCollisionProfileName(TEXT("CharacterMesh"));
+	GetMesh()->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::SnapToTargetIncludingScale);
+	GetMesh()->SetRelativeRotation(PreviousRotation);
+	GetMesh()->SetRelativeLocation(PreviousLocation);
+
+	ResetScore();
+}
+
+void AMATEO_FABBRI_TASKCharacter::ResetScore()
+{
+	ScoreCount = 0;
+
+	SkaterHUD->UpdateScore(ScoreCount);
+}
+
+bool AMATEO_FABBRI_TASKCharacter::GoodLand(float Rotation) const
+{
+	while (Rotation > 360.f)
+		Rotation -= 360.f;
+	
+	return Rotation < GoodLandRange / 2.f || Rotation > 360.f - GoodLandRange / 2.f;
+}
+
+bool AMATEO_FABBRI_TASKCharacter::MidLand(float Rotation) const
+{
+	while (Rotation > 360.f)
+		Rotation -= 360.f;
+	
+	return Rotation < MidLandRange / 2.f || Rotation > 360.f - MidLandRange / 2.f;
+}
+
+float AMATEO_FABBRI_TASKCharacter::GetNormalizedSpeed() const
 {
 	return (GetCharacterMovement()->Velocity.Size2D() - MinForwardVelocity) / (GetCharacterMovement()->MaxWalkSpeed -
 		MinForwardVelocity);
@@ -268,8 +313,12 @@ void AMATEO_FABBRI_TASKCharacter::OnLand()
 	bOnAir = false;
 	bUseControllerRotationYaw = true;
 
-	if (Spin > MinToScoreSpin)
+	if (GoodLand(Spin))
 		AddScore(SpinScore);
+	else if (MidLand(Spin))
+		AddScore(SpinScore / 2);
+	else
+		Fall();
 
 	ResetSpin();
 }

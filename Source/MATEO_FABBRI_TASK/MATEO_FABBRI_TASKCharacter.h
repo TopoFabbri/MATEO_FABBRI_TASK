@@ -54,6 +54,9 @@ class AMATEO_FABBRI_TASKCharacter : public ACharacter
 	int ScoreCount = 0;
 	float Spin = 0.f;
 
+	FVector PreviousLocation = FVector::ZeroVector;
+	FRotator PreviousRotation = FRotator::ZeroRotator;
+
 protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Movement)
 	float MinForwardVelocity = 100.f;
@@ -67,6 +70,18 @@ protected:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Movement)
 	float AirRotationSpeed = 5.f;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Fall)
+	FTimerHandle TimerHandle;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Fall)
+	float GoodLandRange = 45.f;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Fall)
+	float MidLandRange = 90.f;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Fall)
+	float FallenTime = 3.f;
+	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Score")
 	float SpinScore = 50.f;
 
@@ -105,6 +120,12 @@ protected:
 	void SetMinimumVelocity();
 	void PositionSkateMesh() const;
 	void ResetSpin();
+	void Fall();
+	void GetUp();
+	void ResetScore();
+	
+	bool GoodLand(float Rotation) const;
+	bool MidLand(float Rotation) const;
 
 public:
 	/** Returns CameraBoom subobject **/
@@ -113,7 +134,7 @@ public:
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }
 
 	UFUNCTION(BlueprintCallable)
-	float GetNormalizedSpeed();
+	float GetNormalizedSpeed() const;
 
 	UFUNCTION(BlueprintCallable)
 	FVector GetFrontFootPosition() const;

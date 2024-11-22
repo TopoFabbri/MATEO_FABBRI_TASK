@@ -13,9 +13,7 @@
   <component name="ChangeListManager">
     <list default="true" id="fb9efdb6-95af-4e8d-9256-646757bf9b8c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MATEO_FABBRI_TASK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MATEO_FABBRI_TASK/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Character/Anim/ABP_Skateboarder.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Character/Anim/ABP_Skateboarder.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Character/Skateboarding_PhysicsAsset.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Character/Skateboarding_PhysicsAsset.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Fab/Skateboard/skateboard.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Fab/Skateboard/skateboard.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/MATEO_FABBRI_TASKCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/MATEO_FABBRI_TASKCharacter.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/MATEO_FABBRI_TASKCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/MATEO_FABBRI_TASKCharacter.h" afterDir="false" />
     </list>
@@ -171,7 +169,7 @@
       <workItem from="1732192514560" duration="33054000" />
       <workItem from="1732232460693" duration="49000" />
       <workItem from="1732232541388" duration="16000" />
-      <workItem from="1732232686056" duration="12553000" />
+      <workItem from="1732232686056" duration="17401000" />
     </task>
     <servers />
   </component>
