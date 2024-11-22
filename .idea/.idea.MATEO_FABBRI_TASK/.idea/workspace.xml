@@ -13,20 +13,9 @@
   <component name="ChangeListManager">
     <list default="true" id="fb9efdb6-95af-4e8d-9256-646757bf9b8c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.MATEO_FABBRI_TASK/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.MATEO_FABBRI_TASK/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_Gamemode.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_Gamemode.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Maps/IndustrialZone.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Maps/IndustrialZone.umap" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/0/D8/XD782GB0ZNKLF8XK4CQ1QW.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/0/D8/XD782GB0ZNKLF8XK4CQ1QW.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/1/Z1/J3EB9SIC7G46NPNPMVVIX2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/1/Z1/J3EB9SIC7G46NPNPMVVIX2.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/5/YJ/JHLXRSGMFFSO1EFJDCZRHZ.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/5/YJ/JHLXRSGMFFSO1EFJDCZRHZ.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/6/4E/R1PI001JM0FY5U4XE4SEBN.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/6/4E/R1PI001JM0FY5U4XE4SEBN.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/7/ND/Z5ZQW0EN6ZZJ9OTS2U3CI7.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/7/ND/Z5ZQW0EN6ZZJ9OTS2U3CI7.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/9/5Y/046VPXLMR057ZTSUNZOF4P.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/9/5Y/046VPXLMR057ZTSUNZOF4P.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/9/6L/CCJMJ9KN5VTQXM39YC2QOE.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/9/6L/CCJMJ9KN5VTQXM39YC2QOE.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/9/8A/NW1KAQ32OWWPO7ZZHSW96A.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/9/8A/NW1KAQ32OWWPO7ZZHSW96A.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/9/RL/2MJ217O4RBUOXWN8QXNYVC.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/9/RL/2MJ217O4RBUOXWN8QXNYVC.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/B/4R/JWY7DAD7RNVD9E7D365IZE.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/B/4R/JWY7DAD7RNVD9E7D365IZE.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/B/NB/BYEZOEB04AG0NHNFQCT8XX.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/B/NB/BYEZOEB04AG0NHNFQCT8XX.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/E/D7/AY9PW20PAYR948SPNDPJ5X.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/IndustrialZone/E/D7/AY9PW20PAYR948SPNDPJ5X.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/UI/W_Pause.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/UI/W_Pause.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/MATEO_FABBRI_TASKCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/MATEO_FABBRI_TASKCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/PauseWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/MATEO_FABBRI_TASK/PauseWidget.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,16 +104,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "C/C++ Project.MATEO_FABBRI_TASK.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.codeium.enabled": "true",
-    "git-widget-placeholder": "main",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;C/C++ Project.MATEO_FABBRI_TASK.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="C/C++ Project.MATEO_FABBRI_TASK">
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
       <deployment type="dockerfile">
@@ -235,6 +224,7 @@
       <workItem from="1732288449803" duration="614000" />
       <workItem from="1732289097985" duration="8066000" />
       <workItem from="1732299723102" duration="10574000" />
+      <workItem from="1732314936820" duration="2518000" />
     </task>
     <servers />
   </component>

@@ -28,10 +28,5 @@ void UPauseWidget::ResumeGame()
 
 void UPauseWidget::QuitGame()
 {
-	AMATEO_FABBRI_TASKGameMode* GameMode = Cast<AMATEO_FABBRI_TASKGameMode>(GetWorld()->GetAuthGameMode());
-
-	if (!GameMode)
-		return;
-
-	GameMode->ResetLevel();
+	UKismetSystemLibrary::QuitGame(this, nullptr, EQuitPreference::Quit, true);
 }

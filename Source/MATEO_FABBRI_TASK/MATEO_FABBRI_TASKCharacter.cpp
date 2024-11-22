@@ -340,13 +340,11 @@ void AMATEO_FABBRI_TASKCharacter::OnLand()
 {
 	bOnAir = false;
 	bUseControllerRotationYaw = true;
-
-	const int SpinCount = FMath::Abs(Spin / 360.f);
-
+	
 	if (GoodLand(Spin))
-		AddScore(SpinScore * SpinCount);
+		AddScore(SpinScore);
 	else if (MidLand(Spin))
-		AddScore(SpinScore / 2 * SpinCount);
+		AddScore(SpinScore / 2);
 	else
 		Fall();
 
